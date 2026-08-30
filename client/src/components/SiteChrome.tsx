@@ -32,15 +32,70 @@ export function Brand({ compact = false }: { compact?: boolean }) {
 export function SiteNav() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [location] = useLocation();
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768) {
+        setMenuOpen(false);
+      }
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
-    <header className="relative z-30 mx-auto flex w-full max-w-7xl items-center justify-between px-5 py-5 sm:px-8 sm:py-6">
+    <header className="relative z-40 mx-auto flex w-full max-w-7xl items-center justify-between px-5 py-5 sm:px-8 sm:py-6">
       <Brand />
       <nav className="hidden items-center gap-6 lg:flex" aria-label="Primary navigation">
-        {primaryLinks.map(([label, href]) => <a key={href} className={`nav-link ${location === href ? "active" : ""}`} href={href}>{label}</a>)}
+        {primaryLinks.map(([label, href]) => (
+          <a key={href} className={`nav-link ${location === href ? "active" : ""}`} href={href}>
+            {label}
+          </a>
+        ))}
       </nav>
-      <a className="glass-button hidden !px-5 !py-2.5 !text-[.72rem] md:inline-flex" href="/download">Download NEXUS <ArrowRight className="h-3.5 w-3.5" /></a>
-      <button className="liquid-glass inline-flex h-10 w-10 items-center justify-center rounded-full text-white md:hidden" type="button" onClick={() => setMenuOpen((value) => !value)} aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"} aria-expanded={menuOpen}>{menuOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}</button>
-      {menuOpen ? <nav className="liquid-glass absolute inset-x-5 top-[5.3rem] z-40 rounded-2xl p-3 md:hidden" aria-label="Mobile navigation">{primaryLinks.map(([label, href]) => <a key={href} onClick={() => setMenuOpen(false)} className={`block rounded-xl px-4 py-3 text-sm transition hover:bg-white/8 ${location === href ? "text-white" : "text-white/75 hover:text-white"}`} href={href}>{label}</a>)}<a onClick={() => setMenuOpen(false)} className="mt-2 block rounded-xl bg-white px-4 py-3 text-sm font-medium text-[#041824]" href="/download">Download NEXUS</a></nav> : null}
+      <a className="glass-button hidden !px-5 !py-2.5 !text-[.72rem] md:inline-flex" href="/download">
+        Download NEXUS <ArrowRight className="h-3.5 w-3.5" />
+      </a>
+      <button
+        className="liquid-glass relative z-50 inline-flex h-10 w-10 items-center justify-center rounded-full text-white md:hidden"
+        type="button"
+        onClick={() => setMenuOpen((value) => !value)}
+        aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
+        aria-expanded={menuOpen}
+      >
+        {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+      </button>
+
+      {menuOpen ? (
+        <div className="fixed inset-0 top-[4.25rem] z-40 flex flex-col justify-between overflow-y-auto border-t border-white/10 bg-[#031b29]/98 p-6 backdrop-blur-2xl md:hidden">
+          <nav className="flex flex-col gap-1.5" aria-label="Mobile navigation">
+            {primaryLinks.map(([label, href]) => (
+              <a
+                key={href}
+                onClick={() => setMenuOpen(false)}
+                className={`flex items-center justify-between rounded-xl px-4 py-3.5 text-base font-medium transition ${
+                  location === href
+                    ? "bg-white/10 text-[#8AE8FF]"
+                    : "text-white/80 hover:bg-white/5 hover:text-white"
+                }`}
+                href={href}
+              >
+                <span>{label}</span>
+                <ArrowRight className="h-4 w-4 opacity-40" />
+              </a>
+            ))}
+          </nav>
+          <div className="mt-8 border-t border-white/10 pt-5">
+            <a
+              onClick={() => setMenuOpen(false)}
+              className="flex w-full items-center justify-center gap-2 rounded-xl bg-white px-5 py-3.5 text-center text-sm font-semibold text-[#041824] shadow-lg transition active:scale-95"
+              href="/download"
+            >
+              Download NEXUS <ArrowRight className="h-4 w-4" />
+            </a>
+          </div>
+        </div>
+      ) : null}
     </header>
   );
 }
