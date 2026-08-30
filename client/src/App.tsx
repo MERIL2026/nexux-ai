@@ -55,6 +55,8 @@ function Router() {
 }
 
 
+import { SpeedInsights } from "@vercel/speed-insights/react";
+
 function App() {
   return (
     <ErrorBoundary>
@@ -62,6 +64,7 @@ function App() {
         <TooltipProvider>
           <Toaster theme="dark" position="bottom-right" />
           <Router />
+          <SpeedInsights />
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>
