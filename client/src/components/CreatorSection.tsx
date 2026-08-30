@@ -1,7 +1,8 @@
 import { ExternalLink, Github, Globe, Instagram, Linkedin, Sparkles, Twitter } from "lucide-react";
 import { SectionLead } from "./MarketingPrimitives";
 
-export const socialLinks = [
+const socialLinks = [
+
   {
     name: "GitHub",
     url: "https://github.com/MERIL2026",
