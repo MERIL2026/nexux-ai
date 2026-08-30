@@ -64,9 +64,9 @@ export default function Installation() {
         <div className="soft-panel rounded-xl p-5 border border-white/14 bg-[#010b12] font-mono text-sm my-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div className="flex items-center gap-3">
             <span className="text-[#8AE8FF] font-bold">$</span>
-            <code className="text-white font-semibold break-all">npm install -g nexus-ai-cli</code>
+            <code className="text-white font-semibold break-all">npm install -g @nexus-ai-nexoralabs/cli</code>
           </div>
-          <CopyCommandButton command="npm install -g nexus-ai-cli" />
+          <CopyCommandButton command="npm install -g @nexus-ai-nexoralabs/cli" />
         </div>
 
         <p className="text-xs text-white/55 leading-6 mt-3">
@@ -264,9 +264,9 @@ export default function Installation() {
         <div className="soft-panel rounded-xl p-5 border border-white/14 bg-[#010b12] font-mono text-sm my-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div className="flex items-center gap-3">
             <span className="text-[#8AE8FF] font-bold">$</span>
-            <code className="text-white font-semibold break-all">npm uninstall -g nexus-ai-cli</code>
+            <code className="text-white font-semibold break-all">npm uninstall -g @nexus-ai-nexoralabs/cli</code>
           </div>
-          <CopyCommandButton command="npm uninstall -g nexus-ai-cli" />
+          <CopyCommandButton command="npm uninstall -g @nexus-ai-nexoralabs/cli" />
         </div>
 
         <p className="text-xs text-white/55 leading-6 mt-3">

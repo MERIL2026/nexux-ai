@@ -3,7 +3,7 @@ import { Activity, Command, Cpu, HardDrive, Laptop, Monitor, Settings2, ShieldCh
 import { CopyCommandButton, ProductFrame, RailList, RouteAction, SectionLead } from "@/components/MarketingPrimitives";
 
 export default function Download() {
-  return <ProductFrame scene="download" title="Download NEXUS" description="Get NEXUS AI on your machine and follow the verified installation path." eyebrow="DOWNLOAD / LOCAL DEVICE" hero={<>Get NEXUS<br /><em>on your machine.</em></>} detail="NEXUS AI is designed to meet you on a supported device. Select the verified release path for your environment, then move from installation to your first delegated task." actions={<><RouteAction href="#cli-install">NEXUS CLI</RouteAction><RouteAction href="#desktop-coming-soon" secondary>NEXUS Desktop</RouteAction></>} aside={<div className="route-console"><div className="terminal-head"><span>CLI INSTALLATION</span><span className="status-live"><i /> VERIFIED</span></div><div className="p-6"><p className="text-sm leading-6 text-white/70">Install NEXUS AI directly from your terminal with npm, then launch the agent in any workspace.</p><div className="mt-5 rounded-xl border border-white/14 bg-[#010b12] p-4 font-mono text-xs"><div className="flex items-center justify-between gap-2"><span className="text-[#8AE8FF] font-bold">$</span><code className="text-white break-all">npm install -g nexus-ai-cli</code></div><div className="mt-3 flex justify-end"><CopyCommandButton command="npm install -g nexus-ai-cli" /></div></div></div></div>}>
+  return <ProductFrame scene="download" title="Download NEXUS" description="Get NEXUS AI on your machine and follow the verified installation path." eyebrow="DOWNLOAD / LOCAL DEVICE" hero={<>Get NEXUS<br /><em>on your machine.</em></>} detail="NEXUS AI is designed to meet you on a supported device. Select the verified release path for your environment, then move from installation to your first delegated task." actions={<><RouteAction href="#cli-install">NEXUS CLI</RouteAction><RouteAction href="#desktop-coming-soon" secondary>NEXUS Desktop</RouteAction></>} aside={<div className="route-console"><div className="terminal-head"><span>CLI INSTALLATION</span><span className="status-live"><i /> VERIFIED</span></div><div className="p-6"><p className="text-sm leading-6 text-white/70">Install NEXUS AI directly from your terminal with npm, then launch the agent in any workspace.</p><div className="mt-5 rounded-xl border border-white/14 bg-[#010b12] p-4 font-mono text-xs"><div className="flex items-center justify-between gap-2"><span className="text-[#8AE8FF] font-bold">$</span><code className="text-white break-all">npm install -g @nexus-ai-nexoralabs/cli</code></div><div className="mt-3 flex justify-end"><CopyCommandButton command="npm install -g @nexus-ai-nexoralabs/cli" /></div></div></div></div>}>
     
     {/* NEXUS CLI INSTALLATION SECTION */}
     <section className="section-shell border-t border-white/10" id="cli-install">
@@ -16,7 +16,7 @@ export default function Download() {
               <h3 className="mt-1 text-xl font-medium text-white">NEXUS CLI</h3>
               <p className="mt-1 text-sm text-white/60">Install NEXUS AI directly from your terminal.</p>
             </div>
-            <CopyCommandButton command="npm install -g nexus-ai-cli" />
+            <CopyCommandButton command="npm install -g @nexus-ai-nexoralabs/cli" />
           </div>
 
           <div className="mt-6 space-y-5">
@@ -25,9 +25,9 @@ export default function Download() {
               <div className="flex items-center justify-between gap-4 rounded-xl border border-white/14 bg-[#010b12] p-4 font-mono text-sm">
                 <div className="flex items-center gap-3">
                   <span className="text-[#8AE8FF] font-bold">$</span>
-                  <code className="text-white font-semibold break-all">npm install -g nexus-ai-cli</code>
+                  <code className="text-white font-semibold break-all">npm install -g @nexus-ai-nexoralabs/cli</code>
                 </div>
-                <CopyCommandButton command="npm install -g nexus-ai-cli" />
+                <CopyCommandButton command="npm install -g @nexus-ai-nexoralabs/cli" />
               </div>
             </div>
 

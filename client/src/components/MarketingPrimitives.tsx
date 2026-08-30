@@ -3,7 +3,7 @@ import { useState, type ReactNode } from "react";
 import { toast } from "sonner";
 import { PageMeta, SiteFooter, SiteNav } from "./SiteChrome";
 
-export function CopyCommandButton({ command = "npm install -g nexus-ai-cli", className = "" }: { command?: string; className?: string }) {
+export function CopyCommandButton({ command = "npm install -g @nexus-ai-nexoralabs/cli", className = "" }: { command?: string; className?: string }) {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = async () => {

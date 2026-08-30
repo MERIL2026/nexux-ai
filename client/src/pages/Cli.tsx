@@ -25,7 +25,7 @@ import { useMemo, useState } from "react";
 import { Brand, PageMeta, SiteFooter, SiteNav } from "@/components/SiteChrome";
 import { CopyCommandButton } from "@/components/MarketingPrimitives";
 
-const verifiedInstallCommand = "npm install -g nexus-ai-cli";
+const verifiedInstallCommand = "npm install -g @nexus-ai-nexoralabs/cli";
 const verifiedStartCommand = "nexus";
 const verifiedRunCommand = 'nexus run "Analyze this project"';
 const cliVideoSource = "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260314_131748_f2ca2a28-fed7-44c8-b9a9-bd9acdd5ec31.mp4";
@@ -44,7 +44,7 @@ const commandReference = [
 
 const gettingStarted = [
 
-  ["01", "Install the CLI", "Use npm install -g nexus-ai-cli to install globally on your machine."],
+  ["01", "Install the CLI", "Use npm install -g @nexus-ai-nexoralabs/cli to install globally on your machine."],
   ["02", "Initialize NEXUS", "Type nexus in your terminal inside the workspace where you intend to delegate work."],
   ["03", "Configure and authenticate", "Follow documented account, model, API, and local configuration steps if required."],
   ["04", "Run your first task", "Use nexus run \"Analyze this project\", inspect the plan, and decide when approvals are needed."],
@@ -181,7 +181,7 @@ export default function Cli() {
             </div>
             <div className="manifest-foot">
               <ShieldCheck className="h-4 w-4 shrink-0 text-[#8AE8FF]" />
-              <p>Verified npm package <code className="text-white">nexus-ai-cli</code>. Compatible with Node.js 18+ environments.</p>
+              <p>Verified npm package <code className="text-white">@nexus-ai-nexoralabs/cli</code>. Compatible with Node.js 18+ environments.</p>
             </div>
           </div>
         </div>
